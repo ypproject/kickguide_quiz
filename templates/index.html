@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="home-div">
+    <div>
         <img src="{{ url_for('static', filename='label.jpg') }}" alt="start image">
+    </div>
+    <div class="home-div">
+
         <div class="info-div">
             {% if g.user %}
                 <h1>Welcome {{ g.user.username.capitalize() }}, </h1>
             {% else %}
-                <h1>Sign In, Guest </h1>
+                <h1>킥보드 수칙 퀴즈 </h1>
             {% endif %}
-            <h4> Explore the Test Preparation 
-                exclusively made for you!
+            <h4> 안전한 킥보드 사용 생활을 위해
+                킥보드 관련 법률과 준수사항을 퀴즈로 알아봅시다!
             </h4>
-            <a href="{{ url_for('question', id=1)}}">Take the test</a>
+            <a href="{{ url_for('question', id=1)}}">시작하기</a>
         </div>
     </div>
 {% endblock %}
