@@ -3,13 +3,12 @@ from flask import render_template, request, redirect, url_for, session, g
 from forms import QuestionForm
 from models import Questions, Marks
 import json
-import random
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'd2707fea9778e085491e2dbbc73ff30e'
 
 # 문제 데이터 불러오기
-with open('questions.json', 'r', encoding='UTF-8') as f:
+with open('/home/ypproject/kickguide_quiz/questions.json', 'r', encoding='UTF-8') as f:
     QUESTIONS = json.load(f)
 
 @app.route('/')
@@ -46,4 +45,4 @@ def score(marks):
         s="안전수칙 숙지가 필요합니다!"
     return render_template('score.html', title='Final Score', status=s)
 
-app.run(debug=True, host='127.0.0.1')
+app.run(debug=True)
