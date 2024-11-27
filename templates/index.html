@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="home-div">
-        <img src="{{ url_for('static', filename='images/home.jpg') }}" class="home-img">
+        <img src="{{ url_for('static', filename='label.jpg') }}" alt="start image">
         <div class="info-div">
             {% if g.user %}
                 <h1>Welcome {{ g.user.username.capitalize() }}, </h1>
