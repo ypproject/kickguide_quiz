@@ -2,6 +2,9 @@
 
 {% block content %}
     <div class="score-main">
+        <div class="highest-score">
+            <div>당신은 </div> <div class="high-score-name">{{ status }}</div>
+        </div>
             <h1 class="score-head">당신의 점수는</h1>
             <div class="score-circle">
                 <h1>{{ session['marks'] }}</h1>
@@ -9,7 +12,13 @@
             <h1 class="congrats-cls">축하드립니다! <i class="fas fa-glass-cheers"></i></h1>
             <div class="redirect-links">
                 <a href="{{ url_for('home') }}"><i class='fas fa-angle-left'></i> 메인</a>
-                <a href="#" class="btn btn-primary disabled" >다시하기</a>
+                <a href="#" class="btn btn-primary enabled" id="redirectButton" >공부하기</a>
+
+                <script>
+                    document.getElementById("redirectButton").addEventListener("click", function() {
+                        window.location.href = "https://kickguide.creatorlink.net/"; // 원하는 링크로 변경
+                    });
+                </script>
             </div>
     </div>
 {% endblock %}

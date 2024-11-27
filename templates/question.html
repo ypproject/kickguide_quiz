@@ -4,18 +4,32 @@
 {% block content %}
     <div class="ques-div">
         <form method="post" novalidate>
-            <h2 class="qnum">Question {{q.q_id}}</h2>
+            <h2 class="qnum">문제 {{q.q_id}}번</h2>
             <div class="dotted-spaced"></div>
             <hr>
             <h1 class="ques-heading">{{q.ques}}</h1>
             <div class="options-div">
-                {{ form.options(class="list-unstyled") }}
+                {{ form.options(class="list-unstyled", id="options-field") }}
             </div>
-            {{ form.submit(class="btn btn-primary btn-lg sub-btn") }}
+            {{ form.submit(class="btn btn-primary btn-lg sub-btn", id="submit-button", disabled="disabled") }}
+            
         </form>
         <!-- <span class="check-circle">
             <i class="fas fa-check-circle"></i>
         </span> -->
     </div>
+    <script>
+        // JavaScript for enabling the button when an option is selected
+        const radioButtons = document.querySelectorAll('#options-field input[type="radio"]');
+        const submitButton = document.getElementById('submit-button');
+
+        // Add an event listener to all radio buttons
+        radioButtons.forEach(button => {
+            button.addEventListener('change', function() {
+                // Enable the submit button when a radio button is selected
+                submitButton.disabled = !Array.from(radioButtons).some(radio => radio.checked);
+            });
+        });
+    </script>
 
 {% endblock %}

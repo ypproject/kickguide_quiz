@@ -15,6 +15,7 @@ class Questions():
     b = None
     c = None
     d = None
+    e = None
     ans = None
     
     def __init__(self, Question, q_id):
@@ -26,6 +27,7 @@ class Questions():
         self.b = question['options'][1]
         self.c = question['options'][2]
         self.d = question['options'][3]
+        self.e = question['options'][4]
         self.ans = question['answer']
 
     def __repr__(self):

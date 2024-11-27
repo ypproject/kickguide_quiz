@@ -16,6 +16,14 @@ body{
 }
 
 
+.circle-img {
+    width: 500px; /* 이미지 크기 */
+    height: 500px; /* 이미지 크기 */
+    border-radius: 50%; /* 원형 테두리 */
+    border: 5px solid #eeff00; /* 테두리 스타일 */
+    object-fit: cover; /* 이미지 잘림 방지 */
+}
+
 /* Nav CSS */
 
 

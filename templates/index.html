@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <img src="{{ url_for('static', filename='label.jpg') }}" alt="start image">
-    </div>
     <div class="home-div">
-
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="start image" class="circle-img">
         <div class="info-div">
             {% if g.user %}
                 <h1>Welcome {{ g.user.username.capitalize() }}, </h1>
